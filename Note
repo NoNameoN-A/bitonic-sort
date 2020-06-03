@@ -1,0 +1,24 @@
+Progetto APSD
+NOTE BITONIC SORT
+
+Nota 1: Questo programma funziona solo su input con potenze di 2 e, come si avince dal contenuto dell'array, non è importante avere una sequenza bitonica; Se volessi gestire un array con una size non multipla di 2 riscontrerei problemi nell'ordinamento.
+
+Nota 2: Una sequenza bitonica è una sequenza che può essere divisa in più sotto sequenze mototone
+  Es:
+    1 2 3 4 8 7 6 5  ---> Sequenza bitonica...
+    ... 1 2 3 4 8 | 7 6 5 ---> Due sotto sequenze monotone.
+
+Nota 3: La variabile intera 'crescente' viene utilizzata per (come si evince dal nome) comunicare alla funzione sort che si desidera ordinare in maniera crescente
+
+Nota 4: Ho creato la funzione 'sort' per delle possibili ulteriori implementazioni future di altri metodi di ordinamento. Attualmente avrei potuto usare direttamente la funzione 'bitonicSort'
+
+Nota 5: La funzione bitonicSort andrà a "produrre" ricorsivamente delle sottosequenze oppose, ovvero, andremo ad avere, banalmente, a sinistra una sottosequenza crescente e a destra una sottosequenza decrescente delimitate da k che rappresenta la metà della size dell'iterazione i-esima e dalla direzione stessa che viene rappresentata da (1 -> crescente | 0 -> decrescente)
+
+Nota 6: Ordina in modo ricorsivo una sequenza bitonica in ordine crescente, se dir == 1, e in ordine decrescente altrimenti (significa dir == 0). L'ordinamento parte dalla posizione -> 'pos'...'focus' invece rappresenta il numero (quanti) di elementi da dover ordinare.
+
+Nota 7: La variabile 'dir' indicata nel parametro serve a determinare l'andamento crescente o decrescente dell'ordinamento; La clausola 'if(...)' rappresenta le seguenti possibili soluzioni --->
+--->  if(1 == false) // false
+--->  if(1 == true)  // true
+  per tanto si può determinare se lo scambio (swap) deve essere effettuato o meno.
+
+Nota 8: Avrei potuto utilizzare direttamente la funzione della libreria algorihtm per "swappare" i due elementi dell'arrya ma ho preferito ricostruire la stessa per non tralsciare nulla; Viene effettuato un Bubble Sort nella sostanza dove va a scambiare i valori contenuti in ---> 'swap(array[],...,...)' tramite le posizioni ---> 'swap(..., i, j)' le quali vengono gestite dalla funzione 'controntaEScambia()' ---> Nota: 7
